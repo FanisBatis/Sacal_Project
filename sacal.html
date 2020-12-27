@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>SaCal</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="sacal.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .fa {
+                padding: 10px;
+                font-size: 20px;
+                width: 30px;
+                text-align: center;
+                text-decoration: none;
+                margin: 5px 2px;
+                border-radius: 20%;
+                }
+                                
+            .fa:hover {opacity: 0.7;}
+            .fa-facebook {background:#3B5998; color: white;}
+            .fa-twitter {background: #55ACEE; color: white;}
+            .fa-google {background: #dd4b39; color: white;}
+            .fa-linkedin {background: #007bb5; color: white;}
+            .fa-instagram {background: #ff0033; color: white;}
+            
+            .calcbut:hover{color: darkorange;}
+            .calcbut{
+                font-size:30px; 
+                font-weight: bold;
+            }
+        </style>    
+        <script type="text/javascript"> 
+        var opacity = 0; 
+        var intervalID = 0; 
+        window.onload = fadeIn; 
+  
+        function fadeIn() { 
+            setInterval(show, 200); 
+        } 
+  
+        function show() { 
+            var body = document.getElementById("body"); 
+            opacity = Number(window.getComputedStyle(body).getPropertyValue("opacity")); 
+            if (opacity < 1) { 
+                opacity = opacity + 0.1; 
+                body.style.opacity = opacity ;
+            } else { 
+                clearInterval(intervalID); 
+            } 
+        } 
+    </script>
+    </head>
+    <body id='body' style="opacity: 0;">
+       
+        <header>
+            <a title='Salary Calculation'>SaCal</a><br>
+            
+        </header>
+         <ul style="border-bottom: 2px solid black; padding: 10px;">
+            <center class="date" id="date"></center>
+            <li><a style="text-decoration: none; color:black;" href="sacal.html">Αρχική</a></li>
+            <li style="padding-left: 6px; padding-right: 6px; border-right: 1px solid black; border-left: 1px solid black;"><a style=" text-decoration: none; color:black;" href="contact.html">Επικοινωνία </a></li>
+            <li><a href ="info.html" style="text-decoration: none; color:black;">Πληροφορίες</a></li>
+         </ul>
+        <nav>
+            <section id='image' class="image">
+                <img class="images" src="monday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="tuesday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="wednesday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="thursday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="friday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="saturday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+                <img class="images" src="sunday.jpg" style="width:100%; height:100%; margin-left:5px; margin-bottom:5px; border:medium none;overflow:hidden;">
+            </section>
+            
+            <a style="width:100%; text-align:center"><iframe src="https://www.eortologio.net/widget.php?color=FFFFFF&color2=00A83F&bgcolor=004219&width=250&height=280"width="100%" height="300" scrolling=no style="border:0;margin-left:5px;padding:0;"></iframe></a>
+            <a style="width:100%; position:relative"><iframe src="https://hmerologio.gr/iframe/cal" frameBorder="0" width="100%" height="200px" style="margin-left:5px; border:medium none;overflow:hidden;"></iframe></a>
+        </nav>
+        
+        <main>
+           
+            <form name="form">
+                <fieldset style ="background-color: darkseagreen; padding:200px;">
+                    <center id="start"><button type="button" class="start" style="border-color:black; border-radius: 100%; padding:80px; font-size:60px;" onclick="startfunction()">START!</button></center>
+                </fieldset>
+            </form>
+        </main>
+        <aside style="margin-right:5px;">
+            <div id='calc-contain'>
+                <form name="calculator">
+                    <input type="text" name="answer"/>
+                        <br>            
+                        <input name="buttoncalc" type="button" value="1" onclick="calculator.answer.value += '1'" />
+                        <input name="buttoncalc" type="button" value="2" onclick="calculator.answer.value += '2'" />
+                        <input name="buttoncalc" type="button" value="3" onclick="calculator.answer.value += '3'" />
+                        <input name="buttoncalc" type="button" value="+" onclick="calculator.answer.value += '+'" />
+                        <br>
+                        <input name="buttoncalc" type="button" value="4" onclick="calculator.answer.value += '4'" />
+                        <input name="buttoncalc" type="button" value="5" onclick="calculator.answer.value += '5'" />
+                        <input name="buttoncalc" type="button" value="6" onclick="calculator.answer.value += '6'" />
+                        <input name="buttoncalc" type="button" value="-" onclick="calculator.answer.value += '-'" />
+                        <br>
+                        <input name="buttoncalc" type="button" value="7" onclick="calculator.answer.value += '7'" />
+                        <input name="buttoncalc" type="button" value="8" onclick="calculator.answer.value += '8'" />
+                        <input name="buttoncalc" type="button" value="9" onclick="calculator.answer.value += '9'" />
+                        <input name="buttoncalc" type="button" value="x" onclick="calculator.answer.value += '*'" />
+                        <br>
+                        <input name="buttoncalc" style="background-color: red" type="button" value="C" onclick="calculator.answer.value = ''" />
+                        <input name="buttoncalc" type="button" value="0" onclick="calculator.answer.value += '0'" />
+                        <input name="buttoncalc" type="button" value="=" onclick="calculator.answer.value = eval(calculator.answer.value)" />
+                        <input name="buttoncalc" type="button" value="/" onclick="calculator.answer.value += '/'" />
+                        <br>
+                </form>
+            </div>
+            <div id="notes-cont">
+                <textarea name="Notes" rows="10" cols="20" >Σημειώσεις...</textarea>
+            </div>
+        </aside>
+        <footer>
+            <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+            <a href="https://www.twitter.com" class="fa fa-twitter"></a>
+            <a href="https://www.google.com" class="fa fa-google"></a>
+            <a href="https://www.linkedin.com" class="fa fa-linkedin"></a>
+            <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+        </footer>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="sacal.js"></script>
+        <script>
+            function startfunction(){
+                document.getElementById("start").innerHTML ="LOADING... ", window.location.assign("sacal2.html");
+            }   
+        </script>
+    </body>   
+</html>

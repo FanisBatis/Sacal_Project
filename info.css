@@ -1,0 +1,151 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2");
+}
+  
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: auto;
+    background-color: #fff;
+    background-image:
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+header {
+    grid-area: head;
+    font-size: 100px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: -60px;
+    color: darkred;
+    font-family: serif;
+}
+
+.choise{ 
+    grid-area: choises;
+    font-size:20px;
+    text-align: right;
+    list-style-type: none;
+    
+}
+
+main{
+    margin-top: 20px;
+    grid-area: main;
+    }
+
+nav {
+    grid-area: navi;
+    margin-top: 20px;
+}
+
+.date{
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: black;
+    padding: 280px;
+}
+
+
+
+aside { 
+    grid-area: info; 
+    border: 1px solid black;
+    margin-top: 20px;
+    background: darkkhaki;
+    background-size: 40px 60px;
+}
+
+footer  { 
+    grid-area: foot; 
+    border-top: 2px solid black;
+    text-align: center;
+    background-color: black;
+}
+
+#calc-contain{
+  position: relative;
+  width: 160px;
+  border: 2px solid black;
+  border-radius: 12px;
+  margin: 0px auto;
+  margin-top:10px;
+  margin-bottom: 10px;
+  padding: 20px 0px 20px 20px;
+  background-color: darkolivegreen;
+}
+
+input[type=button] {
+  background: lightGray;
+  width: 20%;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 7px;
+  margin-left: 0px;
+  margin-top: 5px; 
+  text-align:center;
+}
+
+input[type=button]:hover {
+  background-color: blue;
+  color: white;
+}
+
+input[type = text] {
+  position: relative;
+  display: block;
+  width: 115px;
+  margin: 0px auto 0px 0px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+#notes-cont {
+  position: relative;
+  width: 160px;
+  margin: 40px auto;
+}
+
+/* Small screens */
+body {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "head"
+        "choises"
+        "navi"
+        "main"
+        "info"
+        "foot";
+}
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+    body {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "head head"
+            "choises choises"
+            "navi navi"
+            "main main"
+            "info info"
+            "foot foot";
+    }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+    body {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+            "head head head"
+            "choises choises choises"
+            "navi main info"
+            "navi main info"
+            "foot foot foot";
+    }
+}

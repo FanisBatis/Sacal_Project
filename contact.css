@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "Source Sans Pro";
+  src: url("https://fonts.gstatic.com/s/sourcesanspro/v13/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lqDY.woff2");
+}
+  
+body {
+    font-family: "Source Sans Pro", sans-serif;
+    margin: auto;
+    background-color: #fff;
+    background-image:
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
+}
+
+header {
+    grid-area: head;
+    font-size: 100px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: -60px;
+    color: darkred;
+    font-family: serif;
+}
+
+ul{ 
+    grid-area: choises;
+    font-size:20px;
+    text-align: right;
+    list-style-type: none;
+}
+
+li{display: inline-block;}
+
+main{
+    margin-top: 20px;
+    grid-area: main;
+    text-align: center;
+}
+
+footer  { 
+    grid-area: foot; 
+    border-top: 2px solid black;
+    text-align: center;
+    background-color: black;
+    margin-top:60px;    
+}
+
+input[type=text] {
+    width: 300px;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=button]{
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size:20px;
+    font-weight: 700;
+    margin-right:20px;
+    color: #009933;
+}
+
+input[type=submit]{
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size:20px;
+    font-weight: 700;
+    margin-right:20px;
+    color: #009933;
+}
+
+input[type=reset]{
+    padding: 12px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    font-size:20px;
+    font-weight: 700;
+    color: red;
+}
+
+.date{
+    font-size: 40px;
+    letter-spacing: 2px;
+    color: black;
+}
+
+/* Small screens */
+body {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "head"
+        "choises"
+        "navi"
+        "main"
+        "info"
+        "foot";
+}
+
+/* Medium screens */
+@media all and (min-width: 600px) {
+    body {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "head head"
+            "choises choises"
+            "navi navi"
+            "main main"
+            "info info"
+            "foot foot";
+    }
+}
+
+/* Large screens */
+@media all and (min-width: 800px) {
+    body {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+            "head head head"
+            "choises choises choises"
+            "main main main"
+            "main main main"
+            "foot foot foot";
+    }
+}
